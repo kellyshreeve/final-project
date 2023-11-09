@@ -74,8 +74,9 @@ Variables missing data were all missing less than 15% of observations. Categoric
   │   └── train_results.png 
   │   └── used_car_clipart.png     
   │
-  └── notebooks  
-      └── car_price_analysis.ipynb  
+  ├── notebooks  
+  │   └── project_code.ipynb
+  |   └── project_plan.ipynb
 ```
 
 # Results and Evaluation
