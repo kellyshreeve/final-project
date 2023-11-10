@@ -6,7 +6,11 @@
   alt="Phone clip art">
 </p>
 
-### Project Overview
+### Table of Contents
+
+[Project Overview](#overview)
+
+### Project Overview<a id='overview'></a>
 **Background**: Telecom operator Interconnect would like to forecast the churn of their clients. If the customer is likely to leave, they will be sent promotions and special plan offers.  
 
 **Purpose**: Fit an imbalanced classification model that accurately predicts which customers are likely to leave the company.  
