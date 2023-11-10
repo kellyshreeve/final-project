@@ -98,7 +98,7 @@ Four additional features were created:
 
 There are fewer customers who churned than did not churn. This is an imbalanced classificaiton problem.
 
-<p align="left">
+<p align="center">
   <img src="/images/churn_over_time.png" 
   width="650"
   height="300"
@@ -109,7 +109,7 @@ Customers who began their contracts in 2014 - 2018 are almost all still with the
 About 50% of customers who began their contracts in 2019 - 2020 have already churned.  
 New customers are more likely to leave than old customers.  
  
-<p align="left">
+<p align="center">
   <img src="/images/histograms.png" 
   width="600"
   height="400"
@@ -120,7 +120,7 @@ The distribution of monthly charges has three peaks at $20, $50, and $80 per mon
 Total charges is highly right skewed, with most people paying close to $0 total and only a few people paying over $6000 over the life of their plan. 
 Contract length is bi-modal, with many people having contracts less than 100 months or more than 2000 months.  
 
-<p align="left">
+<p align="center">
   <img src="/images/correlation_heatmap.png" 
   width="600"
   height="300"
@@ -134,7 +134,7 @@ Contract length and total internet services will be removed from the model.
 
 #### Train Results
 
-<p align="left">
+<p align="center">
   <img src="/images/training_results.png"
   width="425"
   height="500"
@@ -147,7 +147,7 @@ The LightGBM Model will be tested on the test set.
 
 #### Test Results
 
-<p align="left">
+<p align="center">
   <img src="/images/test_results.png"
   width="300"
   height="100"
