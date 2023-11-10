@@ -20,7 +20,7 @@
 
 **Purpose**: Fit an imbalanced classification model that accurately predicts which customers are likely to leave the company.  
 
-**Techniques**: CatBoost, LGBM, XGBoost, AdaBoost, pipelines, GridSearchCV, class balancing.  
+**Techniques**: CatBoost, LGBM, XGBoost, AdaBoost, pipelines, GridSearchCV, SMOTE and ADASYN class balancing.  
 
 ### 2. Installation and Setup<a id='setup'></a>
 
