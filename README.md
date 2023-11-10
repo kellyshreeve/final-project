@@ -1,8 +1,8 @@
 ## Final Project: Predicting Telecom Customer Churn
 <p align="center">
   <img src="images/phone_clipart.png"
-  width="300"
-  height="300"
+  width="250"
+  height="250"
   alt="Phone clip art">
 </p>
 
@@ -91,8 +91,8 @@ Four additional features were created:
  
 <p align="left">
   <img src="/images/class_imbalance.png"
-  width="500"
-  height="500"
+  width="300"
+  height="250"
   alt="Bar plot of target variable, showing class imbalance">
 </p>
 
@@ -101,61 +101,61 @@ There are fewer customers who churned than did not churn. This is an imbalanced 
 <p align="left">
   <img src="/images/churn_over_time.png" 
   width="650"
-  height="250"
+  height="275"
   alt="Correlation heatmap">
 </p>
 
-* Customers who began their contracts in 2014 - 2018 are almost all still with the company.  
-* About 50% of customers who began their contracts in 2019 - 2020 have already churned.  
-* New customers are more likely to leave than old customers.  
+Customers who began their contracts in 2014 - 2018 are almost all still with the company.  
+About 50% of customers who began their contracts in 2019 - 2020 have already churned.  
+New customers are more likely to leave than old customers.  
  
 <p align="left">
   <img src="/images/histograms.png" 
-  width="650"
-  height="250"
+  width="600"
+  height="350"
   alt="Correlation heatmap">
 </p>
 
-* The distribution of monthly charges has three peaks at $20, $50, and $80 per month.  
-* Total charges is highly right skewed, with most people paying close to $0 total and only a few people paying over $6000 over the life of their plan.  
-* Contract length is bi-modal, with many people having contracts less than 100 months or more than 2000 months.  
+The distribution of monthly charges has three peaks at $20, $50, and $80 per month.  
+Total charges is highly right skewed, with most people paying close to $0 total and only a few people paying over $6000 over the life of their plan. 
+Contract length is bi-modal, with many people having contracts less than 100 months or more than 2000 months.  
 
 <p align="left">
   <img src="/images/correlation_heatmap.png" 
-  width="650"
-  height="250"
+  width="600"
+  height="300"
   alt="Correlation heatmap">
 </p>
 
-* The correlation heatmap shows high correlations between numeric features, representing multicollinearity, and a violation of the assumption of non-multicollinearity. Some features will need to be removed from the model.
-* Total charges, while highly correlated with begin year (r = -0.82), shares only a moderate correlation with monthly charges (r = 0.65). Tree models are not highly affected by slight multicollinearity. Total charges will be kept in the model.
-* Begin year and monthly charges have a low correlation with each other and will be kept in the model (r = -0.26)
-* Contract length and total internet services will be removed from the model.
+The correlation heatmap shows high correlations between numeric features, representing multicollinearity, and a violation of the assumption of non-multicollinearity. Some features will need to be removed from the model. 
+Total charges, while highly correlated with begin year (r = -0.82), shares only a moderate correlation with monthly charges (r = 0.65). Tree models are not highly affected by slight multicollinearity. Total charges will be kept in the model.
+Begin year and monthly charges have a low correlation with each other and will be kept in the model (r = -0.26)
+Contract length and total internet services will be removed from the model.
 
 #### Train Results
 
 <p align="left">
-  <img src="/images/train_results.png"
-  width="450"
-  height="250"
+  <img src="/images/training_results.png"
+  width="400"
+  height="500"
   alt="Train results">
 </p>
 
-* The best model was the LightGBM trained on SMOTE upsampled data.
-* This model achieved the highest scores roc-auc and accuracy (ROC-AUC = 0.88, accuracy = 0.81), though had lower scores on precision, recall, and f1 (precision = 0.61, recall = 0.78, f1 = 0.69)
-* The LightGBM Model will be tested on the test set.
+The best model was the LightGBM trained on SMOTE upsampled data.
+This model achieved the highest scores roc-auc and accuracy (ROC-AUC = 0.88, accuracy = 0.81), though had lower scores on precision, recall, and f1 (precision = 0.61, recall = 0.78, f1 = 0.69)
+The LightGBM Model will be tested on the test set.
 
 #### Test Results
 
 <p align="left">
   <img src="/images/test_results.png"
-  width="250"
+  width="275"
   height="100"
   alt="Test results">
 </p>
 
-* The LighGBM Classifier, fit on SMOTE upsampled training data, achieved a lower ROC-AUC on the test set (ROC-AUC = 0.80).
-* This model is likely slightly overfit but still achieve a reasonable training score.
+The LighGBM Classifier, fit on SMOTE upsampled training data, achieved a lower ROC-AUC on the test set (ROC-AUC = 0.80).
+This model is likely slightly overfit but still achieve a reasonable training score.
 
 ### Conclusions and Business Application
 
