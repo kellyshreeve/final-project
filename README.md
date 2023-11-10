@@ -8,21 +8,21 @@
 
 ### Table of Contents
 
-[Project Overview](#overview)  
-[Installation and Setup](#setup)  
-[Data](#data)  
-[Code Structure](#structure)
-[Results and Evaluation](#results)  
-[Conclusions and Business Recommendations](#conclusions)  
+1. [Project Overview](#overview)  
+2. [Installation and Setup](#setup)  
+3. [Data](#data)  
+4. [Code Structure](#structure)  
+5. [Results and Evaluation](#results)  
+6. [Conclusions and Business Recommendations](#conclusions)  
 
-### Project Overview<a id='overview'></a>
+### 1. Project Overview<a id='overview'></a>
 **Background**: Telecom operator Interconnect would like to forecast the churn of their clients. If the customer is likely to leave, they will be sent promotions and special plan offers.  
 
 **Purpose**: Fit an imbalanced classification model that accurately predicts which customers are likely to leave the company.  
 
 **Techniques**: CatBoost, LGBM, XGBoost, AdaBoost, pipelines, GridSearchCV, class balancing.  
 
-### Installation and Setup<a id='setup'></a>
+### 2. Installation and Setup<a id='setup'></a>
 
 #### Codes and Resources Used
 
@@ -37,7 +37,7 @@
   - <b>Machine Learning</b>: ```sklearn, imblearn```  
   - <b>Gradient Boosting</b>: ```catboost, lightgbm, xgboost```
 
-### Data<a id='data'></a>
+### 3. Data<a id='data'></a>
 
 *contract_df.csv*, *internet_df.csv*, *personal_df.csv*, *phone_df.csv*
 
@@ -76,7 +76,7 @@ Four additional features were created:
 3. has_streaming: whether a customer has either streaming service  
 4. total_internet_services: total number of extra internet services on a customer's subscription  
 
-### Code Structure<a id='structure'></a>
+### 4. Code Structure<a id='structure'></a>
 ```
   ├── LICENSE
   ├── README.md          
@@ -94,7 +94,7 @@ Four additional features were created:
       └── project_plan.ipynb
 ```
 
-### Results and Evaluation<a id='results'></a>
+### 5. Results and Evaluation<a id='results'></a>
 
 #### Exploratory Analysis
  
@@ -166,7 +166,7 @@ The LightGBM Model will be tested on the test set.
 The LighGBM Classifier, fit on SMOTE upsampled training data, achieved a lower ROC-AUC on the test set (ROC-AUC = 0.80).
 This model is likely slightly overfit but still achieves a reasonabl training score.
 
-### Conclusions and Business Recommendations<a id='conclusions'></a>
+### 6. Conclusions and Business Recommendations<a id='conclusions'></a>
 
 #### Conclusions
 
