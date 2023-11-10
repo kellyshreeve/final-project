@@ -105,7 +105,7 @@ Four additional features were created:
   alt="Bar plot of target variable, showing class imbalance">
 </p>
 
-There are fewer customers who churned than did not churn. This is an imbalanced classificaiton problem.
+There are fewer customers who churned than did not churn. This is an imbalanced classification problem. Class balancing and weighting techniques will be applied.
 
 <p align="center">
   <img src="/images/churn_over_time.png" 
