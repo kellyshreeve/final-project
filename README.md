@@ -1,7 +1,7 @@
 ## Final Project: Predicting Telecom Customer Churn
 <p align="center">
   <img src="images/phone_clipart.png"
-  width="400"
+  width="300"
   height="300"
   alt="Phone clip art">
 </p>
@@ -30,8 +30,6 @@
 
 ### Data
 
-#### Source Data
-
 *contract_df.csv*, *internet_df.csv*, *personal_df.csv*, *phone_df.csv*
 
 **Target**:   
@@ -59,7 +57,15 @@ The data were provided by TripleTen's Data Science bootcamp. The full dataset is
 
 #### Data Preprocessing
 
-Variables missing data were all missing less than 15% of observations. Categorical missing values were filled with 'unknown' and quantitative missing values were imputed with medians. Duplicates were cleaned from the dataset.
+Data were checked for missing values and duplicates. The 4 missing values in total charges were filled with the median of total charges. No other duplicates or missing values were found.  
+
+The four datasets were merged on customer id to make a comprehensive dataset for all variables.  
+
+Four additional features were created:  
+1. begin_year: begin date of service  
+2. has_protection: whether a customer has any of three internet protection services  
+3. has_streaming: whether a customer has either streaming service  
+4. total_internet_services: total number of extra internet services on a customer's subscription  
 
 ### Code Structure
 ```
@@ -87,10 +93,10 @@ Variables missing data were all missing less than 15% of observations. Categoric
   <img src="/images/class_imbalance.png"
   width="500"
   height="500"
-  alt="sns pair plot of numeric variables">
+  alt="Bar plot of target variable, showing class imbalance">
 </p>
 
-There are no clear associations between the dependent variable price and registriation_year, power, mileage, or registration_month. There is also a possible violation of linearity between price and power.
+There are fewer customers who churned than did not churn. This is an imbalanced classificaiton problem.
 
 <p align="left">
   <img src="/images/churn_over_time.png" 
@@ -99,8 +105,10 @@ There are no clear associations between the dependent variable price and registr
   alt="Correlation heatmap">
 </p>
 
-Price has a moderate, positive correlation with registration year (r = 0.37) and power (r = 0.40). Price has a moderate, negative correlation with mileage(r = -0.33). Price is only weakly related to registration month (r = 0.11). The features registration year, power, and mileage are very weakly correlated with each other. Multicollinearity is not an issue.
-
+* Customers who began their contracts in 2014 - 2018 are almost all still with the company.  
+* About 50% of customers who began their contracts in 2019 - 2020 have already churned.  
+* New customers are more likely to leave than old customers.  
+ 
 <p align="left">
   <img src="/images/histograms.png" 
   width="650"
@@ -108,12 +116,21 @@ Price has a moderate, positive correlation with registration year (r = 0.37) and
   alt="Correlation heatmap">
 </p>
 
+* The distribution of monthly charges has three peaks at $20, $50, and $80 per month.  
+* Total charges is highly right skewed, with most people paying close to $0 total and only a few people paying over $6000 over the life of their plan.  
+* Contract length is bi-modal, with many people having contracts less than 100 months or more than 2000 months.  
+
 <p align="left">
   <img src="/images/correlation_heatmap.png" 
   width="650"
   height="250"
   alt="Correlation heatmap">
 </p>
+
+* The correlation heatmap shows high correlations between numeric features, representing multicollinearity, and a violation of the assumption of non-multicollinearity. Some features will need to be removed from the model.
+* Total charges, while highly correlated with begin year (r = -0.82), shares only a moderate correlation with monthly charges (r = 0.65). Tree models are not highly affected by slight multicollinearity. Total charges will be kept in the model.
+* Begin year and monthly charges have a low correlation with each other and will be kept in the model (r = -0.26)
+* Contract length and total internet services will be removed from the model.
 
 #### Train Results
 
@@ -124,7 +141,9 @@ Price has a moderate, positive correlation with registration year (r = 0.37) and
   alt="Train results">
 </p>
 
-LightGBM achieved the lowest RMSE (RMSE = 1739.38) and highest R^2 value (R^2 = 0.85).  LightGBM took the longest to tune, but this was due to the large number of hyperparameters entered into the grid. LightGBM was able to tune more hyperparameters options than Random Forest and CatBoost in a similar amount of time. Both standard and ridge regression had very quick computations, but they were over $1000 less accurate in their predictions than  LightGBM GBDT. Considering both model score and time, LightGBM GBDT is the best model.
+* The best model was the LightGBM trained on SMOTE upsampled data.
+* This model achieved the highest scores roc-auc and accuracy (ROC-AUC = 0.88, accuracy = 0.81), though had lower scores on precision, recall, and f1 (precision = 0.61, recall = 0.78, f1 = 0.69)
+* The LightGBM Model will be tested on the test set.
 
 #### Test Results
 
@@ -135,7 +154,8 @@ LightGBM achieved the lowest RMSE (RMSE = 1739.38) and highest R^2 value (R^2 = 
   alt="Test results">
 </p>
 
-LightGBM GBDT achieved a lower RMSE and higher R^2 on the test set (RMSE = 1663.85, R^2 = 0.86). The model is likely not overfit. It was able to make predictions in less than one second.
+* The LighGBM Classifier, fit on SMOTE upsampled training data, achieved a lower ROC-AUC on the test set (ROC-AUC = 0.80).
+* This model is likely slightly overfit but still achieve a reasonable training score.
 
 ### Conclusions and Business Application
 
