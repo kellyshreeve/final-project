@@ -89,10 +89,10 @@ Four additional features were created:
 
 #### Exploratory Analysis
  
-<p align="left">
+<p align="center">
   <img src="/images/class_imbalance.png"
-  width="300"
-  height="250"
+  width="400"
+  height="300"
   alt="Bar plot of target variable, showing class imbalance">
 </p>
 
@@ -101,7 +101,7 @@ There are fewer customers who churned than did not churn. This is an imbalanced 
 <p align="left">
   <img src="/images/churn_over_time.png" 
   width="650"
-  height="275"
+  height="300"
   alt="Correlation heatmap">
 </p>
 
@@ -112,7 +112,7 @@ New customers are more likely to leave than old customers.
 <p align="left">
   <img src="/images/histograms.png" 
   width="600"
-  height="350"
+  height="400"
   alt="Correlation heatmap">
 </p>
 
@@ -136,7 +136,7 @@ Contract length and total internet services will be removed from the model.
 
 <p align="left">
   <img src="/images/training_results.png"
-  width="400"
+  width="425"
   height="500"
   alt="Train results">
 </p>
@@ -149,7 +149,7 @@ The LightGBM Model will be tested on the test set.
 
 <p align="left">
   <img src="/images/test_results.png"
-  width="275"
+  width="300"
   height="100"
   alt="Test results">
 </p>
