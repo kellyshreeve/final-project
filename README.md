@@ -127,9 +127,9 @@ Contract length is bi-modal, with many people having contracts less than 100 mon
   alt="Correlation heatmap">
 </p>
 
-The correlation heatmap shows high correlations between numeric features, representing multicollinearity, and a violation of the assumption of non-multicollinearity. Some features will need to be removed from the model. 
-Total charges, while highly correlated with begin year (r = -0.82), shares only a moderate correlation with monthly charges (r = 0.65). Tree models are not highly affected by slight multicollinearity. Total charges will be kept in the model.
-Begin year and monthly charges have a low correlation with each other and will be kept in the model (r = -0.26)
+The correlation heatmap shows high correlations between numeric features, representing multicollinearity, and a violation of the assumption of non-multicollinearity. Some features will need to be removed from the model.  
+Total charges, while highly correlated with begin year (r = -0.82), shares only a moderate correlation with monthly charges (r = 0.65). Tree models are not highly affected by slight multicollinearity. Total charges will be kept in the model.  
+Begin year and monthly charges have a low correlation with each other and will be kept in the model (r = -0.26).  
 Contract length and total internet services will be removed from the model.
 
 #### Train Results
@@ -142,7 +142,7 @@ Contract length and total internet services will be removed from the model.
 </p>
 
 The best model was the LightGBM trained on SMOTE upsampled data.
-This model achieved the highest scores roc-auc and accuracy (ROC-AUC = 0.88, accuracy = 0.81), though had lower scores on precision, recall, and f1 (precision = 0.61, recall = 0.78, f1 = 0.69)
+This model achieved the highest scores on roc-auc and accuracy (ROC-AUC = 0.88, accuracy = 0.81).
 The LightGBM Model will be tested on the test set.
 
 #### Test Results
@@ -155,18 +155,18 @@ The LightGBM Model will be tested on the test set.
 </p>
 
 The LighGBM Classifier, fit on SMOTE upsampled training data, achieved a lower ROC-AUC on the test set (ROC-AUC = 0.80).
-This model is likely slightly overfit but still achieve a reasonable training score.
+This model is likely slightly overfit but still achieves a reasonabl training score.
 
-### Conclusions and Business Application
+### Conclusions and Business Recommendations
 
 #### Conclusions
 
-LightGBM GBDT achieved the best model fit (RMSE test = 1663.83). Predictions from this model will offer customers the predicted value of their car within $1,663.83 on average. The most important features were predicting price were power, registration year, postal code, and mileage.  
+LightGBM Classifier achieved the best model fit (ROC-AUC<sub>TEST</sub> = 0.80, accuracy<sub>TEST</sub> = 0.80). If this model predicts a customer will churn, there's about 80% chance the customer will actually churn (precision<sub>TEST</sub> = 0.80). Of customers who do churn, the model can be expected to predict about 57% of them (recall<sub>TEST</sub> = 0.57).
 
-#### Business Application 
+#### Business Recommendations 
 
-Rusty Bargain will be able to implement this model in their app and be confident that customers will receive accurate predictions in about 1 second. 
+Telecom can feel confident implementing this model to predict which customers will churn. They can expect that if the model says a customer will churn, it's very likely that that customer will indeed churn. The model may miss some customers who will churn, so it's not a bad idea to offer some additional small promotions across the clientelle. Telecom would do well to focus on keeping new customers, as old customers are likely to continue with the company.  
 
 #### Future Research 
 
-With additional time, more hyperparameters and trees/iterations could be performed to improve model accuracy. Additionally, further data cleaning may improve the accuracy of the results.
+More research should be done on the company's newer customers to determine why they are leaving the company. Follow up surveys and additional promotions with this group could help strengthen new client retention.
