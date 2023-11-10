@@ -1,9 +1,9 @@
 ## Final Project: Predicting Telecom Customer Churn
 <p align="center">
-  <img src="images/used_car_clipart.png"
+  <img src="images/phone_clipart.png"
   width="400"
   height="300"
-  alt="Used car clip art">
+  alt="Phone clip art">
 </p>
 
 ### Project Overview
