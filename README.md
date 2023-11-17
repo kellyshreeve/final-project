@@ -181,3 +181,5 @@ Telecom can feel confident implementing this model to predict which customers wi
 #### Future Research 
 
 More research should be done on the company's newer customers to determine why they are leaving the company. Follow up surveys and additional promotions with this group could help strengthen new client retention.
+
+[View Project Code](https://github.com/kellyshreeve/predicting-telecom-customer-churn/blob/main/Notebooks/project-code.ipynb)
