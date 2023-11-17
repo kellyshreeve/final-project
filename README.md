@@ -14,7 +14,7 @@
 4. [Code Structure](#structure)  
 5. [Results and Evaluation](#results)  
 6. [Conclusions and Business Recommendations](#conclusions)
-7. [View Project Code](https://github.com/kellyshreeve/predicting-telecom-customer-churn/blob/main/Notebooks/project-code.ipynb)
+7. [Project Code](https://github.com/kellyshreeve/predicting-telecom-customer-churn/blob/main/Notebooks/project-code.ipynb)
 
 ### 1. Project Overview<a id='overview'></a>
 **Background**: Telecom operator Interconnect would like to forecast the churn of their clients. If the customer is likely to leave, they will be sent promotions and special plan offers.  
