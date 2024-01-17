@@ -19,7 +19,7 @@
 ### 1. Project Overview<a id='overview'></a>
 **Background**: Telecom operator Interconnect would like to forecast the churn of their clients. If the customer is likely to leave, they will be sent promotions and special plan offers.  
 
-**Purpose**: Fit an imbalanced classification model that accurately predicts which customers are likely to leave the company.  
+**Purpose**: Fit an imbalanced classification model that maximizes ROC-AUC when predicting which customers are likely to leave the company.  
 
 **Techniques**: CatBoost, LGBM, XGBoost, AdaBoost, pipelines, GridSearchCV, SMOTE and ADASYN class balancing.  
 
